@@ -1,0 +1,10 @@
+---
+import { content, isDraft } from '../data/portfolio';
+import Icon from './Icon.astro';
+---
+<section id="awards" class="section section-awards" aria-labelledby="awards-title">
+  <div class="container awards-grid">
+    <div><p class="eyebrow"><span class="section-number">06</span>Recognition</p><h2 id="awards-title">Academic<br /><em>awards.</em></h2>{isDraft && <p class="awards-disclaimer">As reported in the CV.<br />Official wording pending review.</p>}</div>
+    <ol class="awards-list">{content.awards.toSorted((a, b) => b.year - a.year).map(award => <li><span class="award-icon"><Icon name="award" size={23} /></span><div><span class="award-year">{award.year}</span><h3>{award.name}</h3><p>{award.event}{award.location ? ` · ${award.location}` : ''}</p></div></li>)}</ol>
+  </div>
+</section>

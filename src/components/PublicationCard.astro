@@ -1,0 +1,26 @@
+---
+import Icon from './Icon.astro';
+import type { PublicationSeed } from '../data/types';
+import { publicationIsReady, publicationLink } from '../lib/content-policy';
+interface Props { publication: PublicationSeed; }
+const { publication } = Astro.props;
+const ready = publicationIsReady(publication);
+const link = publicationLink(publication);
+const title = ready ? publication.canonicalTitle : publication.titleFromCv;
+const journal = ready ? publication.journal : publication.journalFromCv;
+const authors = ready ? publication.authors?.join(', ') : publication.authorExcerptFromCv;
+---
+<article class="publication" data-year={publication.year}>
+  <span class="publication-year">{publication.year}</span>
+  <div class="publication-content">
+    <p class="publication-journal">{journal}</p>
+    <h3>{link ? <a href={link} target="_blank" rel="noopener noreferrer">{title}<span class="sr-only"> (opens in a new tab)</span></a> : title}</h3>
+    <p class="publication-authors">{authors}</p>
+    <div class="publication-notes">
+      {!ready && <span class="citation-status">CV citation · unverified</span>}
+      {ready && publication.authorshipVerified && publication.authorshipNote && <span class="citation-status">{publication.authorshipNote}</span>}
+      {!ready && publication.canonicalTitleNeedsVerification && <span class="citation-note">Official title pending confirmation</span>}
+    </div>
+  </div>
+  {link && <a class="publication-external" href={link} target="_blank" rel="noopener noreferrer" aria-label={`Read ${title} at the publisher (opens in a new tab)`}><Icon name="arrow-up-right" size={23} /></a>}
+</article>

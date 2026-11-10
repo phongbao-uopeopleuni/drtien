@@ -1,0 +1,12 @@
+---
+import { dateLabel, education, experience, isDraft } from '../data/portfolio';
+---
+<section id="academic-journey" class="section section-journey" aria-labelledby="journey-title">
+  <div class="container">
+    <div class="section-heading"><p class="eyebrow"><span class="section-number">05</span>Academic journey</p><h2 id="journey-title">A foundation in biotechnology.<br /><em>A path into infection biology.</em></h2></div>
+    <div class="journey-grid">
+      <div class="journey-column"><h3 class="journey-label">Education & exchange</h3><ol class="timeline">{education.map(item => <li><p class="timeline-date">{dateLabel(item.start)} — {dateLabel(item.end)}</p><h4>{item.program}</h4><p class="timeline-institution">{item.institution}</p>{item.unit && <p class="timeline-detail">{item.unit}</p>}<p class="timeline-detail">{item.location}</p>{item.current && <span class="timeline-note">Ongoing program</span>}{isDraft && item.institutionNameVerified === false && <span class="timeline-note">Institution name pending verification</span>}</li>)}</ol></div>
+      <div class="journey-column"><h3 class="journey-label">Research experience</h3><ol class="timeline">{experience.map(item => <li><p class="timeline-date">{dateLabel(item.start)} — {dateLabel(item.end)}</p><h4>{item.role}</h4><p class="timeline-institution">{item.organization}</p></li>)}</ol><div class="journey-note"><p class="eyebrow">A continuing research journey</p><p>From a background in biotechnology to doctoral research in veterinary virology and immunopathology.</p></div></div>
+    </div>
+  </div>
+</section>

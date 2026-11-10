@@ -1,0 +1,13 @@
+---
+import Icon from './Icon.astro';
+interface Props { title: string; summary: string; index: number; }
+const { title, summary, index } = Astro.props;
+const labels = ['Host & immunity', 'Virus & intervention', 'Inflammation & tissue'];
+const icons = ['network', 'shield', 'layers'] as const;
+---
+<article class="research-card">
+  <div class="research-card-top"><span class="research-symbol"><Icon name={icons[index] ?? 'network'} size={25} /></span><span class="research-index">0{index + 1}</span></div>
+  <h3>{title}</h3>
+  <p>{summary}</p>
+  <div class="research-card-bottom"><span class="small-rule" aria-hidden="true"></span><span>{labels[index]}</span></div>
+</article>

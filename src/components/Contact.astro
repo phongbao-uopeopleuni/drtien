@@ -1,0 +1,29 @@
+---
+import Icon from './Icon.astro';
+import { assetUrl, content, cvPath, linkedinUrl, profile, scholarlyLinks } from '../data/portfolio';
+---
+<section id="contact" class="section section-contact" aria-labelledby="contact-title">
+  <div class="container">
+    <div class="contact-grid"><div><p class="eyebrow"><span class="section-number">07</span>Contact & opportunities</p><h2 id="contact-title">Good research begins<br /><em>with a conversation.</em></h2></div><div class="contact-intro"><p>{profile.postdocInterestsDraft}</p>{content.privacy.showEmail && <a class="button button-light" href={`mailto:${profile.email}`}>Start a conversation <Icon name="arrow-up-right" size={18} /></a>}</div></div>
+    <div class="contact-details">
+      {content.privacy.showEmail && <div class="contact-email"><span class="meta-label">Email</span><div><a class="email-address" href={`mailto:${profile.email}`}>{profile.email}</a><button class="copy-email" type="button" aria-label="Copy email address" data-email={profile.email} hidden><Icon name="copy" size={18} /></button></div><p class="copy-feedback" role="status" aria-live="polite"></p></div>}
+      <div class="contact-affiliation"><span class="meta-label">Based at</span><p>{profile.affiliation}</p></div>
+      {(cvPath || linkedinUrl || scholarlyLinks.length > 0) && <div class="contact-links">{cvPath && <a href={assetUrl(cvPath)} download>Academic CV <Icon name="download" size={16} /></a>}{linkedinUrl && <a href={linkedinUrl} target="_blank" rel="noopener noreferrer">LinkedIn <Icon name="arrow-up-right" size={16} /><span class="sr-only"> (opens in a new tab)</span></a>}{scholarlyLinks.map(link => <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label}<Icon name="arrow-up-right" size={16} /><span class="sr-only"> (opens in a new tab)</span></a>)}</div>}
+    </div>
+  </div>
+</section>
+<script>
+  const copy = document.querySelector<HTMLButtonElement>('.copy-email');
+  const feedback = document.querySelector<HTMLElement>('.copy-feedback');
+  if (copy && feedback && navigator.clipboard) {
+    copy.hidden = false;
+    copy.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(copy.dataset.email ?? '');
+        feedback.textContent = 'Email address copied.';
+      } catch {
+        feedback.textContent = 'Could not copy. Select the email address, or use the email link.';
+      }
+    });
+  }
+</script>

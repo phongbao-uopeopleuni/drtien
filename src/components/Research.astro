@@ -1,0 +1,11 @@
+---
+import ResearchCard from './ResearchCard.astro';
+import Icon from './Icon.astro';
+import { research } from '../data/portfolio';
+---
+<section id="research" class="section section-research" aria-labelledby="research-title">
+  <div class="container">
+    <div class="research-heading"><div class="section-heading"><p class="eyebrow"><span class="section-number">02</span>Research</p><h2 id="research-title">Questions that connect<br /><em>viruses, hosts & immunity.</em></h2><p class="section-description">Three connected themes across infection biology and experimental pathology.</p></div><a class="text-link" href="#expertise">Explore the methods <Icon name="arrow-down" size={17} /></a></div>
+    <div class="research-grid">{research.map((theme, index) => <ResearchCard {...theme} index={index} />)}</div>
+  </div>
+</section>

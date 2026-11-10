@@ -1,0 +1,214 @@
+{
+  "meta": {
+    "version": "1.2",
+    "source": "CV uploaded by user and confirmed requirements in conversation",
+    "notes": [
+      "Public-facing fields must be verified and approved before launch.",
+      "August 2027 is anticipated dissertation defense, not confirmed degree award.",
+      "Do not deploy the uploaded TopCV PDF as downloadable CV without privacy review."
+    ]
+  },
+  "site": {
+    "locale": "en",
+    "goal": "International Postdoctoral Researcher / Research Fellow applications",
+    "style": "minimal academic",
+    "navigation": [
+      "about",
+      "research",
+      "publications",
+      "expertise",
+      "academic-journey",
+      "awards",
+      "contact"
+    ]
+  },
+  "profile": {
+    "name": "Huyen Ton Nu Bao Tien",
+    "currentTitle": "Ph.D. Candidate",
+    "tagline": "Veterinary Virology & Immunopathology",
+    "affiliation": "Jeonbuk National University, South Korea",
+    "dissertationMilestone": {
+      "event": "anticipated_dissertation_defense",
+      "month": "2027-08",
+      "display": "Anticipated Dissertation Defense: August 2027"
+    },
+    "email": "huyentonnubaotien@gmail.com",
+    "linkedinUrl": null,
+    "orcidUrl": null,
+    "googleScholarUrl": null,
+    "portraitPath": null,
+    "publicCvPath": null,
+    "bioDraft": "I am a Ph.D. candidate at Jeonbuk National University, South Korea, with research experience in veterinary virology, innate immunity, and experimental pathology. My doctoral work focuses on host–virus interactions, particularly the role of OASL1 in antiviral immune responses. My research background includes cell-based approaches, molecular techniques, immunohistochemistry, and mouse models. I am interested in contributing to collaborative, interdisciplinary research that builds on these methods and addresses fundamental questions in infection biology and immunoregulation.",
+    "bioApproved": false,
+    "postdocInterestsDraft": "Open to postdoctoral research opportunities that align with my experience in virology, innate immunity, molecular biology, and experimental pathology, including interdisciplinary projects where these approaches can contribute to new scientific questions."
+  },
+  "researchThemes": [
+    {
+      "id": "host-virus-innate-immunity",
+      "title": "Host–Virus Interactions & Innate Immunity",
+      "summary": "OASL1-related research and innate immune responses to viral infections.",
+      "publicSafe": true
+    },
+    {
+      "id": "antiviral-pathogenesis",
+      "title": "Antiviral Strategies & Viral Pathogenesis",
+      "summary": "Broad research interests in pseudorabies virus and antiviral intervention.",
+      "publicSafe": true
+    },
+    {
+      "id": "inflammation-pathology",
+      "title": "Inflammation & Experimental Pathology",
+      "summary": "Research contributions in neuroinflammation, tissue injury, and experimental pathology.",
+      "publicSafe": true
+    }
+  ],
+  "expertise": {
+    "experimentalVirology": [
+      "Viral infection models",
+      "Cell culture"
+    ],
+    "molecularBiology": [
+      "qRT-PCR",
+      "Western blot",
+      "Molecular cloning"
+    ],
+    "pathology": [
+      "Immunohistochemistry",
+      "Mouse models"
+    ],
+    "pastProjectsRequireCompetencyReview": [
+      "DNA barcoding",
+      "Microspore culture"
+    ]
+  },
+  "education": [
+    {
+      "institution": "Jeonbuk National University",
+      "unit": "College of Veterinary Medicine",
+      "program": "Combined Master's & Ph.D. in Veterinary Medicine",
+      "location": "South Korea",
+      "start": "2021-03",
+      "end": null,
+      "current": true
+    },
+    {
+      "institution": "University of Sciences and Education, University of Da Nang",
+      "program": "Bachelor of Biotechnology",
+      "location": "Vietnam",
+      "start": "2016-09",
+      "end": "2020-08",
+      "institutionNameVerified": false
+    },
+    {
+      "institution": "National Chung Cheng University",
+      "unit": "College of Engineering",
+      "program": "Exchange Program",
+      "location": "Taiwan",
+      "start": "2019-06",
+      "end": "2019-08",
+      "topic": "Molecular cloning of D-mannonate dehydratase gene from Bacillus halodurans BCRC 910501"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Graduate Researcher / Ph.D. Candidate",
+      "organization": "Laboratory of Veterinary Pathology, Jeonbuk National University",
+      "start": "2021",
+      "end": null
+    },
+    {
+      "role": null,
+      "organization": "Institute of Biotechnology, Department of Biology and Environmental Sciences",
+      "start": "2020-08",
+      "end": "2021-02",
+      "requiresClarification": true
+    },
+    {
+      "role": "Research Assistant",
+      "organization": "Department of Biology and Environmental Sciences",
+      "start": "2016-12",
+      "end": "2020-07",
+      "parentInstitutionNeedsVerification": true
+    }
+  ],
+  "publications": [
+    {
+      "id": "p1",
+      "year": 2023,
+      "titleFromCv": "The presence of anthracosis is associated with environmental air quality in animals",
+      "journalFromCv": "American Journal of Veterinary Research",
+      "authorExcerptFromCv": "Leya M., Oh B., Ha S., Huyen T.N.B.T., et al.",
+      "contributionFromCv": "Co-author",
+      "doi": null,
+      "publisherUrl": null,
+      "verified": false,
+      "publicReleaseReady": false
+    },
+    {
+      "id": "p2",
+      "year": 2024,
+      "titleFromCv": "Amlexanox attenuates LPS-induced neuroinflammation via NF-κB and STAT3 inhibition",
+      "journalFromCv": "Scientific Reports",
+      "authorExcerptFromCv": "Phan V.T., Huyen T.N.B.T., et al.",
+      "contributionFromCv": "Co-first author (CV claim; verify equal contribution)",
+      "doi": null,
+      "publisherUrl": null,
+      "verified": false,
+      "publicReleaseReady": false
+    },
+    {
+      "id": "p3",
+      "year": 2024,
+      "titleFromCv": "The role of OASL1 in liver injury models",
+      "journalFromCv": "Scientific Reports",
+      "authorExcerptFromCv": "Leya M., Yang D., Huyen T.N.B.T., et al.",
+      "contributionFromCv": "Co-first author (CV claim; verify equal contribution)",
+      "doi": null,
+      "publisherUrl": null,
+      "verified": false,
+      "publicReleaseReady": false,
+      "canonicalTitleNeedsVerification": true
+    },
+    {
+      "id": "p4",
+      "year": 2024,
+      "titleFromCv": "Hepatocyte-Specific Casein Kinase 1 Epsilon Ablation Ameliorates Metabolic Dysfunction–Associated Steatohepatitis by Up-Regulating Tumor Necrosis Factor Receptor–Associated Factor 3 in Mice",
+      "journalFromCv": "The American Journal of Pathology",
+      "authorExcerptFromCv": "Leya M., Mwense, Jeong H., Yang D., Huyen T.N.B.T., et al.",
+      "contributionFromCv": "Co-author",
+      "doi": null,
+      "publisherUrl": null,
+      "verified": false,
+      "publicReleaseReady": false
+    }
+  ],
+  "awards": [
+    {
+      "year": 2023,
+      "name": "Best Poster Presentation Award",
+      "event": "The 3rd Joint Meeting of Veterinary Science in East Asia",
+      "location": "Taiwan"
+    },
+    {
+      "year": 2023,
+      "name": "Best Presentation Award",
+      "event": "Annual Conference of the Korean Society of Veterinary Pathology"
+    },
+    {
+      "year": 2024,
+      "name": "Excellent Poster Prize",
+      "event": "Korean Society of Veterinary Sciences Conference"
+    }
+  ],
+  "privacy": {
+    "showPortrait": true,
+    "showEmail": true,
+    "showCvOnlyWhenApproved": true,
+    "showLinkedInOnlyWhenVerified": true,
+    "showPhone": false,
+    "showBirthYear": false,
+    "showRefereeContacts": false,
+    "showUnpublishedResults": false,
+    "showDraftManuscriptTitles": false
+  }
+}

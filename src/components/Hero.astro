@@ -1,0 +1,41 @@
+---
+import Icon from './Icon.astro';
+import { assetUrl, cvPath, portraitPath, profile } from '../data/portfolio';
+const nameParts = profile.name.split(' ');
+const firstLine = nameParts.slice(0, -2).join(' ');
+const lastLine = nameParts.slice(-2).join(' ');
+---
+<section id="home" class="hero" aria-labelledby="hero-title">
+  <div class="container">
+    <div class="hero-main">
+      <div class="hero-copy">
+        <p class="eyebrow hero-eyebrow"><span class="status-dot" aria-hidden="true"></span>A research portfolio <span class="hero-eyebrow-separator" aria-hidden="true">/</span> South Korea</p>
+        <h1 id="hero-title"><span>{firstLine}</span><em>{lastLine}<span class="name-period">.</span></em></h1>
+        <p class="hero-role"><span class="role-badge">{profile.currentTitle}</span><span>{profile.tagline}</span></p>
+        <p class="hero-affiliation"><Icon name="location" size={14} />{profile.affiliation}</p>
+        <p class="hero-summary">Investigating host–virus interactions and innate immune regulation through molecular, cellular and experimental pathology approaches.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#research">Explore research <span class="button-icon"><Icon name="arrow-up-right" size={18} /></span></a>
+          <a class="text-link hero-publications-link" href="#publications">View publications <Icon name="arrow-right" size={17} /></a>
+          {cvPath && <a class="text-link" href={assetUrl(cvPath)} download>Download CV <Icon name="download" size={16} /></a>}
+        </div>
+      </div>
+      {portraitPath ? <figure class="portrait-panel"><img src={assetUrl(portraitPath)} alt={profile.name} width="520" height="600" fetchpriority="high" /><figcaption>{profile.currentTitle} · {profile.affiliation}</figcaption></figure> :
+        <aside class="focus-panel" aria-label="Research focus overview">
+          <div class="focus-panel-top"><span class="eyebrow">Infection biology</span><span class="folio-mark" aria-hidden="true">Research folio / 01</span></div>
+          <div class="folio-emblem" aria-hidden="true"><span class="emblem-rule emblem-rule-top"></span><span class="emblem-lettermark">bt<span>.</span></span><span class="emblem-rule emblem-rule-bottom"></span></div>
+          <p class="focus-statement">Exploring the dialogue<br />between <em>host & virus.</em></p>
+          <div class="focus-index" aria-label="Research domains">
+            <span>Virology</span><span>Innate immunity</span><span>Pathology</span>
+          </div>
+          <p class="focus-panel-footer">Molecular · Cellular · In vivo</p>
+        </aside>
+      }
+    </div>
+    <div class="hero-meta">
+      <div class="hero-meta-status"><span class="meta-label">The current chapter</span><p><span class="status-dot" aria-hidden="true"></span>{profile.currentTitle}</p></div>
+      <div><span class="meta-label">The next milestone</span><p>{profile.dissertationMilestone.display}</p></div>
+      <a class="hero-scroll" href="#about"><span>Discover my work</span><span class="scroll-circle"><Icon name="arrow-down" size={18} /></span></a>
+    </div>
+  </div>
+</section>

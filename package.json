@@ -1,0 +1,31 @@
+{
+  "name": "bao-tien-research-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.12.0"
+  },
+  "scripts": {
+    "dev": "node scripts/astro.mjs dev --host 127.0.0.1",
+    "check": "node scripts/astro.mjs check && node scripts/check-content.mjs",
+    "build": "npm run check && node scripts/create-social-card.mjs && node scripts/astro.mjs build",
+    "build:release": "node scripts/build-release.mjs",
+    "preview": "node scripts/astro.mjs preview --host 127.0.0.1",
+    "test": "node --test tests/content-policy.test.ts",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@fontsource-variable/dm-sans": "5.3.0",
+    "@fontsource-variable/newsreader": "5.3.0",
+    "astro": "7.4.8"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.12",
+    "@axe-core/playwright": "^4.11.0",
+    "@playwright/test": "1.65.0",
+    "@types/node": "^24.19.2",
+    "sharp": "^0.35.5",
+    "typescript": "^5.9.3"
+  }
+}

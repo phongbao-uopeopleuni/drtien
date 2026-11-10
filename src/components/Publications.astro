@@ -1,0 +1,44 @@
+---
+import PublicationCard from './PublicationCard.astro';
+import { isDraft, publications } from '../data/portfolio';
+const years = [...new Set(publications.map(item => item.year))];
+---
+<section id="publications" class="section section-publications" aria-labelledby="publications-title">
+  <div class="container">
+    <div class="publications-heading">
+      <div class="section-heading"><p class="eyebrow"><span class="section-number">03</span>Publications</p><h2 id="publications-title">Contributing to<br /><em>the scientific conversation.</em></h2></div>
+      <p class="publication-count"><span>{String(publications.length).padStart(2, '0')}</span>{isDraft ? 'Citation drafts' : 'Journal articles'}</p>
+    </div>
+    {isDraft && publications.length > 0 && <p class="bibliography-notice">Bibliographic details are being reviewed. These CV-reported citations have not yet been independently verified; publication links and author-contribution claims are withheld.</p>}
+    {publications.length > 0 ? <>
+      <div class="publication-toolbar">
+        <div class="publication-filters" role="group" aria-label="Filter publications by year" hidden>
+          <button type="button" data-filter="all" aria-pressed="true">All years</button>
+          {years.map(year => <button type="button" data-filter={String(year)} aria-pressed="false">{year}</button>)}
+        </div>
+        <p class="filter-result" aria-live="polite" aria-atomic="true">{publications.length} entries</p>
+      </div>
+      <div class="publication-list">{publications.map(publication => <PublicationCard publication={publication} />)}</div>
+    </> : <div class="empty-publications"><h3>A bibliography in progress.</h3><p>Verified publication details will be added here. For research enquiries, please <a href="#contact">get in touch</a>.</p></div>}
+  </div>
+</section>
+<script>
+  const filters = document.querySelector<HTMLElement>('.publication-filters');
+  const entries = [...document.querySelectorAll<HTMLElement>('.publication')];
+  const feedback = document.querySelector('.filter-result');
+  if (filters) {
+    filters.hidden = false;
+    filters.querySelectorAll<HTMLButtonElement>('button').forEach(button => {
+      button.addEventListener('click', () => {
+        const year = button.dataset.filter;
+        filters.querySelectorAll('button').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+        let count = 0;
+        entries.forEach(entry => {
+          entry.hidden = year !== 'all' && entry.dataset.year !== year;
+          if (!entry.hidden) count++;
+        });
+        if (feedback) feedback.textContent = `${count} ${count === 1 ? 'entry' : 'entries'}${year === 'all' ? '' : ` from ${year}`}`;
+      });
+    });
+  }
+</script>

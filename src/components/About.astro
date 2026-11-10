@@ -1,0 +1,12 @@
+---
+import { isDraft, profile } from '../data/portfolio';
+---
+<section id="about" class="section section-about" aria-labelledby="about-title">
+  <div class="container about-grid">
+    <div><p class="eyebrow"><span class="section-number">01</span>About</p><h2 id="about-title">A curiosity for<br />infection.<br /><em>A focus on immunity.</em></h2></div>
+    <div class="about-copy">
+      {(isDraft || profile.bioApproved) && <p class="body-large">{profile.bioDraft}</p>}
+      <div class="about-affiliation"><span class="small-rule" aria-hidden="true"></span><p>Laboratory of Veterinary Pathology<br /><span>College of Veterinary Medicine<br />{profile.affiliation}</span></p></div>
+    </div>
+  </div>
+</section>
