@@ -214,6 +214,28 @@
   .award-year { display: block; color: var(--bronze); font-size: 11px; line-height: 1.5; margin-bottom: 7px; font-variant-numeric: tabular-nums; }
   .awards-list h3 { font-family: var(--serif); font-size: 29px; line-height: 1.2; letter-spacing: -.4px; }
   .awards-list p { color: var(--muted); font-size: 12px; margin-top: 8px; }
+  .section-gallery { position: relative; margin-inline: 24px; border-radius: 26px; background: linear-gradient(165deg, #162b2b 0%, #1a3335 40%, #152928 100%); color: #edf4f0; padding-block: 81px; overflow: hidden; }
+  .section-gallery .container { position: relative; z-index: 1; width: min(var(--page-width), calc(100% - 80px)); }
+  .gallery-bg { position: absolute; inset: 0; pointer-events: none; }
+  .gallery-molecules { position: absolute; inset: 0; width: 100%; height: 100%; color: #6dbfaa; }
+  .gallery-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; margin-bottom: 47px; }
+  .section-gallery .eyebrow { color: #a8cfc0; }
+  .section-gallery .section-number { color: #72c4a8; border-color: #3a635a; }
+  .section-gallery h2 { color: #edf4f0; }
+  .section-gallery h2 em { color: #6dbfaa; }
+  .section-gallery .section-description { color: #9ec3b5; max-width: 485px; font-size: 15px; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .gallery-card { overflow: hidden; border-radius: 14px; border: 1px solid #2f524a; background: linear-gradient(180deg, #ffffff08 0%, #ffffff03 100%); backdrop-filter: blur(4px); transition: border-color 280ms var(--ease), box-shadow 280ms var(--ease); }
+  .gallery-card:hover { border-color: #4d9e88; box-shadow: 0 8px 32px #0d1a1608, 0 0 0 1px #4d9e8820; }
+  .gallery-card-img { overflow: hidden; }
+  .gallery-card-img img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform 500ms var(--ease); }
+  .gallery-card:hover .gallery-card-img img { transform: scale(1.04); }
+  .gallery-card-info { display: grid; grid-template-columns: auto 1fr; gap: 15px; padding: 18px 20px; border-top: 1px solid #2f524a; }
+  .gallery-card-index { display: flex; flex-direction: column; align-items: center; gap: 3px; color: #72c4a8; font-size: 10px; font-variant-numeric: tabular-nums; padding-top: 2px; }
+  .gallery-card-index svg { opacity: .5; }
+  .gallery-card-info h3 { font-family: var(--serif); font-size: 20px; line-height: 1.25; letter-spacing: -.3px; color: #edf4f0; }
+  .gallery-card-info p { color: #89b3a3; font-size: 11px; margin-top: 4px; letter-spacing: .2px; }
+  .section-gallery :focus-visible { outline-color: #72c4a8; }
   .section-contact { margin-inline: 24px; padding-block: 78px 42px; border-radius: 26px; background: var(--ink); color: var(--paper); }
   .section-contact .container { width: min(var(--page-width), calc(100% - 80px)); }
   .contact-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 85px; }
@@ -362,6 +384,8 @@
     .awards-grid { gap: 35px; }
     .awards-list h3 { font-size: 27px; }
     .awards-list > li { gap: 17px; }
+    .gallery-header { flex-direction: column; align-items: flex-start; gap: 18px; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
     .contact-grid { gap: 35px; }
     .section-contact h2 { font-size: 42px; }
     .contact-intro > p { font-size: 13px; }
@@ -480,6 +504,15 @@
     .award-icon svg { width: 21px; height: 21px; }
     .awards-list h3 { font-size: 27px; }
     .awards-list p { font-size: 12px; }
+    .section-gallery { margin-inline: 10px; border-radius: 18px; padding-block: 47px; }
+    .section-gallery .container { width: calc(100% - 40px); }
+    .gallery-header { gap: 15px; }
+    .gallery-molecules { display: none; }
+    .section-gallery .section-description { font-size: 14px; }
+    .gallery-grid { grid-template-columns: 1fr; gap: 14px; }
+    .gallery-card-info { gap: 12px; padding: 15px 16px; }
+    .gallery-card-info h3 { font-size: 18px; }
+    .gallery-card-info p { font-size: 10px; }
     .contact-grid { grid-template-columns: 1fr; gap: 26px; }
     .section-contact h2 { font-size: 39px; }
     .section-contact .eyebrow { font-size: 10px; letter-spacing: 1px; }

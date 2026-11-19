@@ -34,6 +34,7 @@ export const navItems = [
   { id: 'publications', label: 'Publications' },
   { id: 'expertise', label: 'Expertise' },
   { id: 'academic-journey', label: 'Journey' },
+  { id: 'gallery', label: 'Gallery' },
   { id: 'contact', label: 'Contact' },
 ];
 

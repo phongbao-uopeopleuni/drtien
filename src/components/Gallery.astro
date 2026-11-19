@@ -1,0 +1,88 @@
+---
+import { assetUrl } from '../data/portfolio';
+
+const photos = [
+  { src: '/images/global-goals-mun.jpg', alt: 'Representing Vietnam at Global Goals Model United Nations', caption: 'Global Goals MUN', detail: 'Vietnam Delegation · International Conference' },
+  { src: '/images/outstanding-student-award.jpg', alt: 'Receiving Outstanding Student Award at university ceremony', caption: 'Outstanding Student Award', detail: 'University-level Recognition Ceremony' },
+  { src: '/images/presidential-palace-ceremony.jpg', alt: 'Group photo at the Presidential Palace in Hanoi', caption: 'Presidential Palace', detail: 'National Outstanding Student Ceremony · Hanoi' },
+  { src: '/images/student-union-anniversary.jpg', alt: 'Celebrating the 70th anniversary of Vietnam Student Union', caption: '70th Anniversary', detail: 'Vietnam Student Union · January 2020' },
+  { src: '/images/academic-excellence-awards.jpg', alt: 'Award recipients holding certificates of academic excellence', caption: 'Academic Excellence', detail: 'Certificates & Awards Recognition' },
+];
+---
+<section id="gallery" class="section section-gallery" aria-labelledby="gallery-title">
+  {/* Molecular background pattern */}
+  <div class="gallery-bg" aria-hidden="true">
+    <svg class="gallery-molecules" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Hexagonal molecular structure — top left */}
+      <g class="mol-hex" opacity=".07">
+        <polygon points="120,60 170,35 220,60 220,110 170,135 120,110" stroke="currentColor" stroke-width="1" fill="none" />
+        <polygon points="220,60 270,35 320,60 320,110 270,135 220,110" stroke="currentColor" stroke-width="1" fill="none" />
+        <polygon points="170,135 220,110 270,135 270,185 220,210 170,185" stroke="currentColor" stroke-width="1" fill="none" />
+      </g>
+      {/* DNA helix — right side */}
+      <g class="mol-dna" opacity=".06">
+        <path d="M1050,80 Q1080,140 1050,200 Q1020,260 1050,320 Q1080,380 1050,440" stroke="currentColor" stroke-width="1.2" fill="none" />
+        <path d="M1090,80 Q1060,140 1090,200 Q1120,260 1090,320 Q1060,380 1090,440" stroke="currentColor" stroke-width="1.2" fill="none" />
+        <line x1="1050" y1="110" x2="1090" y2="110" stroke="currentColor" stroke-width=".8" />
+        <line x1="1053" y1="170" x2="1087" y2="170" stroke="currentColor" stroke-width=".8" />
+        <line x1="1050" y1="230" x2="1090" y2="230" stroke="currentColor" stroke-width=".8" />
+        <line x1="1053" y1="290" x2="1087" y2="290" stroke="currentColor" stroke-width=".8" />
+        <line x1="1050" y1="350" x2="1090" y2="350" stroke="currentColor" stroke-width=".8" />
+        <line x1="1053" y1="410" x2="1087" y2="410" stroke="currentColor" stroke-width=".8" />
+      </g>
+      {/* Scattered atoms / molecular dots */}
+      <g class="mol-dots" opacity=".08">
+        <circle cx="80" cy="400" r="4" fill="currentColor" />
+        <circle cx="140" cy="430" r="2.5" fill="currentColor" />
+        <line x1="82" y1="402" x2="138" y2="428" stroke="currentColor" stroke-width=".7" />
+        <circle cx="60" cy="500" r="3" fill="currentColor" />
+        <line x1="78" y1="403" x2="62" y2="498" stroke="currentColor" stroke-width=".7" />
+        <circle cx="950" cy="600" r="3.5" fill="currentColor" />
+        <circle cx="1010" cy="580" r="2" fill="currentColor" />
+        <circle cx="990" cy="650" r="2.5" fill="currentColor" />
+        <line x1="952" y1="602" x2="1008" y2="580" stroke="currentColor" stroke-width=".7" />
+        <line x1="952" y1="603" x2="988" y2="648" stroke="currentColor" stroke-width=".7" />
+      </g>
+      {/* Benzene ring — bottom left */}
+      <g class="mol-benzene" opacity=".05" transform="translate(300, 620)">
+        <polygon points="0,-30 26,-15 26,15 0,30 -26,15 -26,-15" stroke="currentColor" stroke-width="1.2" fill="none" />
+        <polygon points="0,-18 16,-9 16,9 0,18 -16,9 -16,-9" stroke="currentColor" stroke-width=".6" fill="none" />
+      </g>
+      {/* Cross / plus markers */}
+      <g opacity=".06">
+        <line x1="800" y1="90" x2="800" y2="106" stroke="currentColor" stroke-width="1" />
+        <line x1="792" y1="98" x2="808" y2="98" stroke="currentColor" stroke-width="1" />
+        <line x1="500" y1="700" x2="500" y2="716" stroke="currentColor" stroke-width="1" />
+        <line x1="492" y1="708" x2="508" y2="708" stroke="currentColor" stroke-width="1" />
+      </g>
+    </svg>
+  </div>
+  <div class="container">
+    <div class="gallery-header">
+      <div>
+        <p class="eyebrow"><span class="section-number">07</span>In the Field</p>
+        <h2 id="gallery-title">Beyond the<br /><em>laboratory.</em></h2>
+      </div>
+      <p class="section-description">Conferences, ceremonies, and collaborations that shaped the academic journey — from local recognition to international engagement.</p>
+    </div>
+    <div class="gallery-grid">
+      {photos.map((photo, i) => (
+        <figure class="gallery-card">
+          <div class="gallery-card-img">
+            <img src={assetUrl(photo.src)} alt={photo.alt} loading="lazy" decoding="async" />
+          </div>
+          <figcaption class="gallery-card-info">
+            <span class="gallery-card-index">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><polygon points="6,0 11.2,3 11.2,9 6,12 0.8,9 0.8,3" stroke="currentColor" stroke-width=".8" fill="none" /></svg>
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <div>
+              <h3>{photo.caption}</h3>
+              <p>{photo.detail}</p>
+            </div>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
